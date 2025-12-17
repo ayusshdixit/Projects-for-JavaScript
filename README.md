@@ -1,6 +1,6 @@
 # Projects-for-JavaScript
 
-## Project Related to dom 
+## project related to dom
 
 [click here] (https://github.com/ayusshdixit/Projects-for-JavaScript/tree/main/Color-Changer)
 
