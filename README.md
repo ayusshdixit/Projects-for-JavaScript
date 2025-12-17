@@ -2,6 +2,7 @@
 
 ## project related to dom
 
+## project link
 [click here] (https://github.com/ayusshdixit/Projects-for-JavaScript/tree/main/Color-Changer)
 
 # project 1 
@@ -35,5 +36,5 @@ Buttons.forEach(function(button) {
             body.style.backgroundColor = e.target.id;
     })
 })
-
+```
     
