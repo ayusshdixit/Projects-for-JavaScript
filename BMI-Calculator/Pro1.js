@@ -17,7 +17,20 @@ results.innerHTML =  `Please enter a valid weight ${weight}`;
 else{
     const bmi = (weight / ((height*height)/10000)).toFixed(2);
 
- results.innerHTML = `<span>${bmi}</span>`
-}
 
+ let message = ' ';
+
+ if ( bmi < 18.5 ){
+  message= `Your BMI is ${bmi} (Underweight)`
+ } else if (bmi>= 18.5 && bmi < 25){
+   message = ` Your BMI is ${bmi} (Normal)`
+ }else if (bmi >= 25 && bmi <= 30 ){
+  message = ` Your BMI is ${bmi} (Overweight)`
+ }
+ else {
+   message = `Your BMI is ${bmi} (of Obese)`
+ }
+ results.innerHTML=` <span>${message}</span>`
+  }
 });
+
