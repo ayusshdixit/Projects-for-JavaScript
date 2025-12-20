@@ -2,8 +2,8 @@
 
 ## project related to dom
 
-## project link
-[click here] (https://github.com/ayusshdixit/Projects-for-JavaScript/tree/main/Color-Changer)
+## projects link
+[click here] (https://github.com/ayusshdixit/Projects-for-JavaScript)
 
 # project 1 
 
@@ -38,10 +38,6 @@ Buttons.forEach(function(button) {
 })
 ```
 # project 2
-
-## PROJECT LINK
-
-[click here] (https://github.com/ayusshdixit/Projects-for-JavaScript/tree/main/BMI-Calculator)
 
 ## Bmi Calculator 
 
@@ -86,5 +82,19 @@ else{
 
 
 ```
-    
-    
+# Project 3 
+
+# Digital clock
+
+## Solution Code 
+
+```JavaScript
+
+const Clock = document.querySelector('#clock')
+
+setInterval(function() {
+    let date = new Date();
+    Clock.innerHTML= date.toLocaleTimeString()
+} ,1000)
+
+```
