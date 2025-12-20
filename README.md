@@ -7,6 +7,8 @@
 
 # project 1 
 
+# Color-Changer
+
 ## solution code 
 
 ```JavaScript 
@@ -39,7 +41,7 @@ Buttons.forEach(function(button) {
 ```
 # project 2
 
-## Bmi Calculator 
+## BMI Calculator 
 
 ### Solution Code 
 
