@@ -207,8 +207,8 @@ function newGame(guess) {
 ## Unlimited-colors 
 
 # Solution code 
-```
-JavaScript 
+
+ ```JavaScript 
 
 const randomColor = function () {
 const hex = '0123456789ABCDEF';
