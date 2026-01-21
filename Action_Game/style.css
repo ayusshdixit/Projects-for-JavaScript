@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: red;
+    overflow: hidden;
+}
+
+.gameOver{
+    visibility: hidden;
+    position: relative;
+    font-size: 53px;
+    text-align: center;
+    top:  63px;
+    font-family: sans-serif;
+}
+#scoreCount{
+    color: #54212f;
+    position: absolute;
+    font-weight: bold;
+    font-family: sans-serif;
+    top:31px;
+    right:45px;
+    border: 2px solid black;
+    padding: 10px;
+    
+}
+
+.gamecontainer{
+    background-image: url(bg-Image.jpg);
+    background-repeat: no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh ;
+}
+
+.batman{
+    background-image: url(images.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 115px;
+    height: 250px;
+    position: absolute;
+    bottom: 110px;
+    /* margin-bottom: 110px; */
+    left: 52px;
+}
+
+.obstacle{
+    background-image: url(joker-batman-harley-quinn-animated-series-dc-animated-universe-joker.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 115px;
+    height: 280px;
+    position: absolute;
+    bottom : 110px;
+    left:44vw;
+}
+
+.obstacleAni{
+    animation: obstacleAni 5s linear infinite;
+}
+
+.animatebatman{
+    animation: batman 1s linear;
+}
+
+@keyframes batman{
+    0%{
+         bottom : 110px;
+    }
+    50%{
+          bottom: 570px;
+    }
+    100%{
+        bottom : 110px;
+    }
+}
+
+@keyframes obstacleAni{
+    0%{
+      left: 100vw;
+    }
+    100%{
+       left : -10vw;
+    }
+}
+
