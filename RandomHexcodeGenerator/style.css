@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    transition: background-color 0.4s ease;
+}
+
+.container{
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 380px; display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+}
+
+h1{
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#colorCode{
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #444;
+    letter-spacing: 2px;
+}
+
+button{
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: scale(0.97);
+}
+
+#copybtn{
+     margin-top: 10px;
+}
+
+.history{
+    margin-top: 20px;
+    font-size: 10px;
+    width: 200px;
+    border: 2px solid Black;
+  
+}
+
+.history h1{
+    text-decoration: underline;
+}

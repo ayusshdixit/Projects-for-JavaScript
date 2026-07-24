@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+align-items: center;
+}
+
+.cantainer{
+    height: 400px;
+    width: 500px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    width:200px;
+    height: 100px;
+    background-color: orange;
+    border: none;
+    border-radius: 14px  ;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
