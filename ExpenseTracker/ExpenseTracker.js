@@ -24,6 +24,8 @@ const storedData = localStorage.getItem("transactions");
 
 const transactions = JSON.parse(storedData) || [];
 
+let editingId = null;
+
 displayTransactions(transactions);
 
 updateSummary();
@@ -42,16 +44,46 @@ transactionForm.addEventListener('submit', (e) => {
 
     const typeValue = type.value
 
-    const transaction = {
-        id: Date.now(),
-        description: descriptionValue,
-        category: categoryValue,
-        amount: amountValue,
-        type: typeValue,
-        date: dateValue
+
+
+    if (editingId !== null) {
+
+        const transactionToEdit = transactions.find((item) => {
+            return item.id === editingId
+        })
+
+        transactionToEdit.description = descriptionValue;
+
+        transactionToEdit.amount = amountValue;
+
+        transactionToEdit.category = categoryValue;
+
+        transactionToEdit.type = typeValue;
+
+        transactionToEdit.date = dateValue;
+
+    } else {
+
+        const transaction = {
+
+            id: Date.now(),
+
+            description: descriptionValue,
+
+            category: categoryValue,
+
+            amount: amountValue,
+
+            type: typeValue,
+
+            date: dateValue
+        }
+        transactions.push(transaction);
     }
 
-    transactions.push(transaction)
+
+
+    editingId = null;
 
     localStorage.setItem("transactions", JSON.stringify(transactions));
 
@@ -70,15 +102,22 @@ function displayTransactions(transactionArray) {
     transactionArray.forEach((transaction) => {
         const li = document.createElement('li')
 
-        li.textContent = ` ${transaction.description} | ${transaction.category} | ${transaction.amount}| ${transaction.type}| ${transaction.date}`
-
-
         const deleteBtn = document.createElement('button')
+
+        const editBtn = document.createElement('button')
+
+        editBtn.textContent = 'Edit'
+
+        li.textContent = ` ${transaction.description} | ${transaction.category} | ${transaction.amount}| ${transaction.type}| ${transaction.date}`
 
         deleteBtn.textContent = 'Delete'
 
+        li.appendChild(editBtn)
+
         transactionList.appendChild(li)
+
         li.appendChild(deleteBtn)
+
 
         deleteBtn.addEventListener('click', () => {
 
@@ -96,8 +135,23 @@ function displayTransactions(transactionArray) {
 
         })
 
-    })
+        editBtn.addEventListener('click', () => {
 
+            description.value = transaction.description
+
+            amount.value = transaction.amount
+
+            category.value = transaction.category
+
+            type.value = transaction.type
+
+            date.value = transaction.date
+
+            editingId = transaction.id;
+
+
+        })
+    })
 
 
 }
@@ -118,17 +172,18 @@ function displayTransactions(transactionArray) {
 */
 
 
+
+
 filterButton.forEach((btn) => {
 
     btn.addEventListener("click", () => {
 
-        const filter = btn.dataset.filter;
 
-        if (filter === "all") {
+        if (btn.textContent.trim() === "All") {
             displayTransactions(transactions);
         }
 
-        else if (filter === "income") {
+        else if (btn.textContent.trim() === "Income") {
 
             const filterIncome = transactions.filter((item) => {
                 return item.type === "income";
@@ -137,7 +192,7 @@ filterButton.forEach((btn) => {
             displayTransactions(filterIncome);
         }
 
-        else if (filter === "expense") {
+        else if (btn.textContent.trim() === "Expense") {
 
             const filterExpense = transactions.filter((item) => {
                 return item.type === "expense";
@@ -149,6 +204,8 @@ filterButton.forEach((btn) => {
     });
 
 });
+
+
 
 
 function updateSummary() {
